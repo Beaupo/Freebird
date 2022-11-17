@@ -1,0 +1,31 @@
+---
+title: "PackageTutorial.Rmd"
+author: "Beau Powers"
+date: "2022-11-17"
+output: html_document
+---
+
+```{r setup, include=FALSE}
+knitr::opts_chunk$set(echo = TRUE)
+```
+# Introduction to My R Package
+ *word* = italics
+ **word** = bold
+ 
+ one line of space for a new paragraph
+ 
+ ```{r}
+ # r code and will print the code and the result of said code
+ ```
+ ## Installation Instructions
+ 
+ ```{r}
+ install.packages("ggplot2")
+ # comment
+ ```
+ 
+ ![caption](path/to/image) #to show the image
+ 
+ it is possible to add [hyperlinks](bladhwe.org).
+ 
+ 

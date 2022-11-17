@@ -1,0 +1,17 @@
+Package: Freebird
+Title: drop_NA's, creats ggplot, writes LM function
+Version: 0.0.0.9000
+Authors@R: 
+    person("Beau", "Powers", , "beau.powers@selu.edu", role = c("aut", "cre"))
+Description: drops the NA and cleans, creats a Lm function, and a ggplot.
+License: MIT + file LICENSE
+Depends:
+  R (>= 3.0)
+Imports:
+  tidyverse, ggplot2
+Suggests:
+  knitr, rmarkdown
+VignetteBuilder: knitr
+Encoding: UTF-8
+Roxygen: list(markdown = TRUE)
+RoxygenNote: 7.2.2
