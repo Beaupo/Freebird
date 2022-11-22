@@ -9,23 +9,24 @@ output: html_document
 knitr::opts_chunk$set(echo = TRUE)
 ```
 # Introduction to My R Package
- *word* = italics
- **word** = bold
+
+In this package it includes the function of a lm plot, a ggplot, and the ability to clean the data.
+These function are ment to be used with the data set g=crabs that is in the R file.
+this acn be downloaded to your computer to use the different functions.
  
- one line of space for a new paragraph
  
- ```{r}
- # r code and will print the code and the result of said code
- ```
  ## Installation Instructions
  
- ```{r}
- install.packages("ggplot2")
- # comment
- ```
+ This package require the uses of the packages as followed. 
  
- ![caption](path/to/image) #to show the image
- 
- it is possible to add [hyperlinks](bladhwe.org).
+```{r}
+install.packages("tidyverse")
+install.packages("ggplot2")
+install.packages("roxygen")
+```
+
+
+crabs <- read.csv("/cloud/project/R")
+
  
  

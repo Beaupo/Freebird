@@ -74,6 +74,7 @@
 </h2>
 <p>#’ removes NA’s #’ Lm function #’ ggplot</p>
 <p>#’ works with numerical data sets</p>
+<pre class="{r}"><code><span><span class="va">crabs</span> <span class="op">&lt;-</span> <span class="fu"><a href="https://rdrr.io/r/utils/read.table.html" class="external-link">read.csv</a></span><span class="op">(</span><span class="st">"/cloud/project/R"</span><span class="op">)</span></span></code></pre>
 <p>#’ outputs</p>
 <p>#’ clean data #’ lm function plot #’ ggplot</p>
 </div>
@@ -81,13 +82,35 @@
 <h2 id="installation">Installation<a class="anchor" aria-label="anchor" href="#installation"></a>
 </h2>
 <p>Package depends on tidyverse</p>
-<p>’’‘{r} install.packages(“tidyverse”) install.packages(““) install.packages(”“)’’’</p>
+<pre class="{r}"><code><span><span class="fu"><a href="https://rdrr.io/r/utils/install.packages.html" class="external-link">install.packages</a></span><span class="op">(</span><span class="st">"tidyverse"</span><span class="op">)</span></span>
+<span><span class="fu"><a href="https://rdrr.io/r/utils/install.packages.html" class="external-link">install.packages</a></span><span class="op">(</span><span class="st">"ggplot2"</span><span class="op">)</span></span>
+<span><span class="fu"><a href="https://rdrr.io/r/utils/install.packages.html" class="external-link">install.packages</a></span><span class="op">(</span><span class="st">"roxygen"</span><span class="op">)</span></span></code></pre>
 </div>
 <div class="section level2">
 <h2 id="usage-examples">Usage Examples<a class="anchor" aria-label="anchor" href="#usage-examples"></a>
 </h2>
-<p>context for why someone wants to do whatever it is that your R package does.</p>
-<p>’’‘{r} file’’’ cleaning_crabs &lt;- function(filepath){ clean_crabs &lt;- read_csv(filepath) data_clean &lt;- clean_crabs %&gt;% drop_na() if (sum(is.na(d_c)) == 0){ return(good_to_go) } else { print(“NAs in the house”) } }</p>
+<pre class="{r}"><code><span><span class="va">cleaning_crabs</span> <span class="op">&lt;-</span> <span class="kw">function</span><span class="op">(</span><span class="va">filepath</span><span class="op">)</span><span class="op">{</span></span>
+<span>  <span class="va">clean_crabs</span> <span class="op">&lt;-</span> <span class="fu">read_csv</span><span class="op">(</span><span class="va">filepath</span><span class="op">)</span></span>
+<span>  <span class="va">data_clean</span> <span class="op">&lt;-</span> <span class="va">clean_crabs</span> <span class="op">%&gt;%</span> </span>
+<span>    <span class="fu">drop_na</span><span class="op">(</span><span class="op">)</span></span>
+<span>  <span class="kw">if</span> <span class="op">(</span><span class="fu"><a href="https://rdrr.io/r/base/sum.html" class="external-link">sum</a></span><span class="op">(</span><span class="fu"><a href="https://rdrr.io/r/base/NA.html" class="external-link">is.na</a></span><span class="op">(</span><span class="va">d_c</span><span class="op">)</span><span class="op">)</span> <span class="op">==</span> <span class="fl">0</span><span class="op">)</span><span class="op">{</span></span>
+<span>    <span class="kw"><a href="https://rdrr.io/r/base/function.html" class="external-link">return</a></span><span class="op">(</span><span class="va">good_to_go</span><span class="op">)</span></span>
+<span>  <span class="op">}</span> <span class="kw">else</span> <span class="op">{</span></span>
+<span>    <span class="fu"><a href="https://rdrr.io/r/base/print.html" class="external-link">print</a></span><span class="op">(</span><span class="st">"NAs in the house"</span><span class="op">)</span></span>
+<span>  <span class="op">}</span></span>
+<span><span class="op">}</span></span></code></pre>
+<pre class="{r}"><code><span><span class="va">lm_function</span> <span class="op">&lt;-</span> <span class="kw">function</span><span class="op">(</span><span class="va">carapace_length</span>, <span class="va">body_depth</span><span class="op">)</span><span class="op">{</span></span>
+<span><span class="va">model_fit</span> <span class="op">&lt;-</span> <span class="fu"><a href="https://rdrr.io/r/stats/lm.html" class="external-link">lm</a></span><span class="op">(</span><span class="va">carapace_length</span> <span class="op">~</span> <span class="va">body_depth</span>, data <span class="op">=</span> <span class="va">crabs</span><span class="op">)</span></span>
+<span><span class="fu">broom</span><span class="fu">::</span><span class="fu"><a href="https://generics.r-lib.org/reference/tidy.html" class="external-link">tidy</a></span><span class="op">(</span><span class="va">model_fit</span><span class="op">)</span></span>
+<span></span>
+<span><span class="fu">broom</span><span class="fu">::</span><span class="fu"><a href="https://generics.r-lib.org/reference/augment.html" class="external-link">augment</a></span><span class="op">(</span><span class="va">model_fit</span><span class="op">)</span> <span class="op">-&gt;</span> <span class="va">augmented_fit</span></span>
+<span><span class="fu"><a href="https://rdrr.io/r/stats/qqnorm.html" class="external-link">qqnorm</a></span><span class="op">(</span><span class="va">augmented_fit</span><span class="op">$</span><span class="va">.resid</span><span class="op">)</span></span>
+<span><span class="fu"><a href="https://rdrr.io/r/stats/qqnorm.html" class="external-link">qqline</a></span><span class="op">(</span><span class="va">augmented_fit</span><span class="op">$</span><span class="va">.resid</span>, col <span class="op">=</span> <span class="st">"purple"</span><span class="op">)</span></span>
+<span><span class="op">}</span></span></code></pre>
+<pre class="{r}"><code><span><span class="va">plot_it</span> <span class="op">&lt;-</span> <span class="kw">function</span><span class="op">(</span><span class="va">data</span><span class="op">)</span> <span class="op">{</span></span>
+<span>  <span class="fu">ggplot</span><span class="op">(</span>data <span class="op">=</span> <span class="va">crabs</span>, mapping <span class="op">=</span> <span class="fu">aes</span><span class="op">(</span>x <span class="op">=</span> <span class="va">carapace_length</span>, y <span class="op">=</span> <span class="va">body_depth</span><span class="op">)</span><span class="op">)</span> <span class="op">+</span></span>
+<span>    <span class="fu">geom_point</span><span class="op">(</span><span class="op">)</span></span>
+<span><span class="op">}</span></span></code></pre>
 </div>
 
   </div>
@@ -96,9 +119,8 @@
     <div class="license">
 <h2 data-toc-skip>License</h2>
 <ul class="list-unstyled">
-<li>
-<a href="https://opensource.org/licenses/mit-license.php" class="external-link">MIT</a> + file <a href="LICENSE-text.html">LICENSE</a>
-</li>
+<li><a href="LICENSE.html">Full license</a></li>
+<li><small><a href="https://opensource.org/licenses/mit-license.php" class="external-link">MIT</a> + file <a href="LICENSE-text.html">LICENSE</a></small></li>
 </ul>
 </div>
 

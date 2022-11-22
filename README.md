@@ -17,6 +17,10 @@ knitr::opts_chunk$set(echo = TRUE)
 
 #' works with numerical data sets
 
+```{r}
+crabs <- read.csv("/cloud/project/R")
+```
+
 #' outputs
 
 #' clean data 
@@ -27,19 +31,17 @@ knitr::opts_chunk$set(echo = TRUE)
 
 Package depends on tidyverse
 
-'''{r}
+```{r}
 install.packages("tidyverse")
-install.packages("")
-install.packages("")
-'''
+install.packages("ggplot2")
+install.packages("roxygen")
+```
 
 ## Usage Examples
 
-context for why someone wants to do whatever it is that your R package does.
 
-'''{r}
-file
-'''
+
+```{r}
 cleaning_crabs <- function(filepath){
   clean_crabs <- read_csv(filepath)
   data_clean <- clean_crabs %>% 
@@ -50,3 +52,24 @@ cleaning_crabs <- function(filepath){
     print("NAs in the house")
   }
 }
+```
+
+
+```{r}
+lm_function <- function(carapace_length, body_depth){
+model_fit <- lm(carapace_length ~ body_depth, data = crabs)
+broom::tidy(model_fit)
+
+broom::augment(model_fit) -> augmented_fit
+qqnorm(augmented_fit$.resid)
+qqline(augmented_fit$.resid, col = "purple")
+}
+```
+
+
+```{r}
+plot_it <- function(data) {
+  ggplot(data = crabs, mapping = aes(x = carapace_length, y = body_depth)) +
+    geom_point()
+}
+```
