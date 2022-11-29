@@ -23,6 +23,7 @@ this acn be downloaded to your computer to use the different functions.
 install.packages("tidyverse")
 install.packages("ggplot2")
 install.packages("roxygen")
+remotes::install_github("Beaupo/freebird")
 ```
 
 ```{r}
