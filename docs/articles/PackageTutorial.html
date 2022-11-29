@@ -52,6 +52,9 @@
 <li>
       <a href="../articles/PackageTutorial.html">PackageTutorial.Rmd</a>
     </li>
+    <li>
+      <a href="../articles/crabs.html">UNKNOWN TITLE</a>
+    </li>
   </ul>
 </li>
       </ul>
@@ -92,15 +95,15 @@ your computer to use the different functions.</p>
 <p>This package require the uses of the packages as followed.</p>
 <div class="sourceCode" id="cb1"><pre class="downlit sourceCode r">
 <code class="sourceCode R"><span><span class="fu"><a href="https://rdrr.io/r/utils/install.packages.html" class="external-link">install.packages</a></span><span class="op">(</span><span class="st">"tidyverse"</span><span class="op">)</span></span></code></pre></div>
-<pre><code><span><span class="co">## Installing package into '/tmp/Rtmpgt6K0Z/temp_libpath11c3679fba06'</span></span>
+<pre><code><span><span class="co">## Installing package into '/tmp/RtmpMADs6A/temp_libpath58c59c49593'</span></span>
 <span><span class="co">## (as 'lib' is unspecified)</span></span></code></pre>
 <div class="sourceCode" id="cb3"><pre class="downlit sourceCode r">
 <code class="sourceCode R"><span><span class="fu"><a href="https://rdrr.io/r/utils/install.packages.html" class="external-link">install.packages</a></span><span class="op">(</span><span class="st">"ggplot2"</span><span class="op">)</span></span></code></pre></div>
-<pre><code><span><span class="co">## Installing package into '/tmp/Rtmpgt6K0Z/temp_libpath11c3679fba06'</span></span>
+<pre><code><span><span class="co">## Installing package into '/tmp/RtmpMADs6A/temp_libpath58c59c49593'</span></span>
 <span><span class="co">## (as 'lib' is unspecified)</span></span></code></pre>
 <div class="sourceCode" id="cb5"><pre class="downlit sourceCode r">
 <code class="sourceCode R"><span><span class="fu"><a href="https://rdrr.io/r/utils/install.packages.html" class="external-link">install.packages</a></span><span class="op">(</span><span class="st">"roxygen"</span><span class="op">)</span></span></code></pre></div>
-<pre><code><span><span class="co">## Installing package into '/tmp/Rtmpgt6K0Z/temp_libpath11c3679fba06'</span></span>
+<pre><code><span><span class="co">## Installing package into '/tmp/RtmpMADs6A/temp_libpath58c59c49593'</span></span>
 <span><span class="co">## (as 'lib' is unspecified)</span></span></code></pre>
 <pre><code><span><span class="co">## Warning: package 'roxygen' is not available for this version of R</span></span>
 <span><span class="co">## </span></span>
@@ -108,6 +111,31 @@ your computer to use the different functions.</p>
 <span><span class="co">## see the ideas at</span></span>
 <span><span class="co">## https://cran.r-project.org/doc/manuals/r-patched/R-admin.html#Installing-packages</span></span></code></pre>
 <div class="sourceCode" id="cb8"><pre class="downlit sourceCode r">
+<code class="sourceCode R"><span><span class="fu">remotes</span><span class="fu">::</span><span class="fu"><a href="https://remotes.r-lib.org/reference/install_github.html" class="external-link">install_github</a></span><span class="op">(</span><span class="st">"Beaupo/freebird"</span><span class="op">)</span></span></code></pre></div>
+<pre><code><span><span class="co">## Using github PAT from envvar GITHUB_PAT</span></span></code></pre>
+<pre><code><span><span class="co">## Downloading GitHub repo Beaupo/freebird@HEAD</span></span></code></pre>
+<pre><code><span><span class="co">## vctrs      (0.5.0  -&gt; 0.5.1 ) [CRAN]</span></span>
+<span><span class="co">## sass       (0.4.2  -&gt; 0.4.4 ) [CRAN]</span></span>
+<span><span class="co">## xfun       (0.34   -&gt; 0.35  ) [CRAN]</span></span>
+<span><span class="co">## knitr      (1.40   -&gt; 1.41  ) [CRAN]</span></span>
+<span><span class="co">## data.table (1.14.4 -&gt; 1.14.6) [CRAN]</span></span></code></pre>
+<pre><code><span><span class="co">## Installing 5 packages: vctrs, sass, xfun, knitr, data.table</span></span></code></pre>
+<pre><code><span><span class="co">## Installing packages into '/tmp/RtmpMADs6A/temp_libpath58c59c49593'</span></span>
+<span><span class="co">## (as 'lib' is unspecified)</span></span></code></pre>
+<pre><code><span><span class="co">## <span style="color: #00BBBB;">──</span> <span style="color: #00BBBB;">R CMD build</span> <span style="color: #00BBBB;">─────────────────────────────────────────────────────────────────</span></span></span>
+<span><span class="co">## * checking for file ‘/tmp/RtmpBgC3WD/remotes6a3a9f85f8/Beaupo-Freebird-3a5e3cf/DESCRIPTION’ ... OK</span></span>
+<span><span class="co">## * preparing ‘Freebird’:</span></span>
+<span><span class="co">## * checking DESCRIPTION meta-information ... OK</span></span>
+<span><span class="co">## * excluding invalid files</span></span>
+<span><span class="co">## Subdirectory 'R' contains invalid file names:</span></span>
+<span><span class="co">##   ‘crabs.txt’</span></span>
+<span><span class="co">## * checking for LF line-endings in source and make files and shell scripts</span></span>
+<span><span class="co">## * checking for empty or unneeded directories</span></span>
+<span><span class="co">## * building ‘Freebird_0.0.0.9000.tar.gz’</span></span>
+<span><span class="co">## Warning: invalid uid value replaced by that for user 'nobody'</span></span></code></pre>
+<pre><code><span><span class="co">## Installing package into '/tmp/RtmpMADs6A/temp_libpath58c59c49593'</span></span>
+<span><span class="co">## (as 'lib' is unspecified)</span></span></code></pre>
+<div class="sourceCode" id="cb16"><pre class="downlit sourceCode r">
 <code class="sourceCode R"><span><span class="fu"><a href="https://rdrr.io/r/utils/download.file.html" class="external-link">download.file</a></span><span class="op">(</span>url<span class="op">=</span><span class="st">"https://ndownloader.figshare.com/files/2292169"</span>,</span>
 <span>              destfile <span class="op">=</span> <span class="st">"data/crabs.csv"</span><span class="op">)</span></span></code></pre></div>
 <pre><code><span><span class="co">## Warning in download.file(url = "https://ndownloader.figshare.com/files/</span></span>

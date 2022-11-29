@@ -35,6 +35,7 @@ Package depends on tidyverse
 install.packages("tidyverse")
 install.packages("ggplot2")
 install.packages("roxygen")
+remotes::install_github("Beaupo/freebird")
 ```
 
 ## Usage Examples
@@ -52,6 +53,8 @@ cleaning_crabs <- function(filepath){
     print("NAs in the house")
   }
 }
+
+cleaning_crabs(crabs)
 ```
 
 
@@ -64,6 +67,8 @@ broom::augment(model_fit) -> augmented_fit
 qqnorm(augmented_fit$.resid)
 qqline(augmented_fit$.resid, col = "purple")
 }
+
+lm_function(crabs)
 ```
 
 
@@ -72,4 +77,6 @@ plot_it <- function(data) {
   ggplot(data = crabs, mapping = aes(x = carapace_length, y = body_depth)) +
     geom_point()
 }
+
+plot_it(crabs)
 ```
